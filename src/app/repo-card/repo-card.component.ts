@@ -1,4 +1,6 @@
+import { Repository } from './../repository';
 import { Component, OnInit } from '@angular/core';
+import { GithubService } from '../http-client/github.service';
 
 @Component({
   selector: 'app-repo-card',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepoCardComponent implements OnInit {
 
-  constructor() { }
+  repo: Repository;
+
+  constructor(private service: GithubService) { }
 
   ngOnInit(): void {
   }

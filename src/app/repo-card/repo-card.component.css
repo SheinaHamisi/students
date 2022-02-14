@@ -1,0 +1,33 @@
+#repo-name{
+    color: #3C5780;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#outer-card{
+    background-color: #8DA4C5;
+    border-radius: 8px;
+    width: 170px;
+    height: 160px;
+    border: none;
+    margin: 5px;
+    display: flex;
+    position: relative;
+}
+
+#inner-card{
+    width: 150px;
+    height: 115px;
+    border-radius: 8px;
+    position: relative;
+    right: 2px;
+    bottom: 17px;
+}
+
+#inner-card p{
+    font-weight: bold;
+    font-size: 72px;
+    color: #6A403F;
+    text-align: center;
+}
