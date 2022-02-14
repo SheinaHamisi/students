@@ -1,0 +1,13 @@
+.body{
+    padding-left: 170px;
+    padding-right: 170px;
+    padding-top: 100px;
+}
+
+#heading{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 64px;
+    margin-bottom: 55px;
+}
