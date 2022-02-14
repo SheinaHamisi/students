@@ -31,7 +31,10 @@
         <div class="row">
             <a href="{{user.html_url}}"class='btn btn-primary' target='blank'>Check Github</a>
 
-            <!-- <app-repo-card></app-repo-card> -->
+            <div *ngFor="let userRepository of userRepositories">
+                <p>{{userRepository.name}}</p>
+                <p>{{userRepository.full_name}}</p>
+                </div>
         </div>
     </div>
 </div>

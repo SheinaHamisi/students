@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Repository } from '../repository';
+import { searchValue } from 'src/variables';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +11,31 @@ import { environment } from 'src/environments/environment';
 export class GithubService {
 
   user:User;
-  // repository: Repository;
+  userRepositories:any;
+  repository: Repository;
   
   constructor(private http:HttpClient) { 
-    this.user = new User("", "", "", 0, "", "");
+    this.user = new User("Sheina", "SheinaHamisi", "Coast", 23, "./assets/Avatar.png", "https://github.com/SheinaHamisi");
+    this.userRepositories = [{
+      name: "Akan-names",
+      full_name: "SheinaHamisi/Akan-names"
+    },
+    {
+      name: "customer-service",
+      full_name: "SheinaHamisi/customer-service"
+    }];
+  }
+
+  getUserRepos(name:string){
+    let promise = new Promise <void> ((resolve, reject) => {
+      this.http.get<any>(environment.url + "/" + name + "/repos").subscribe(data => {
+        this.userRepositories = data;
+        resolve ();
+      }, error => {
+        [];
+        reject(error);
+      })
+    })
   }
 
   getUser(name:string){
@@ -27,7 +50,7 @@ export class GithubService {
 
 
     let promise = new Promise<void>((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.url).subscribe(data => {
+      this.http.get<ApiResponse>(environment.url + "/" + name).subscribe(data => {
         this.user.name = data.name;
         this.user.login = data.login;
         this.user.location = data.location;

@@ -12,13 +12,16 @@ import { environment } from 'src/environments/environment';
 export class CardComponent implements OnInit {
 
   user:User;
+  userRepositories:any= [];
   repo:Repository;
 
 
   constructor(private githubService:GithubService) { }
 
   ngOnInit(): void {
+    
     this.user = this.githubService.user;
+    this.userRepositories = this.githubService.userRepositories;
   }
 
 }
