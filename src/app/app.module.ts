@@ -8,6 +8,7 @@ import { BodyComponent } from './body/body.component';
 import { CardComponent } from './card/card.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { FormsModule } from '@angular/forms';
+import { RepoCardComponent } from './repo-card/repo-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     BodyComponent,
     CardComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    RepoCardComponent
   ],
   imports: [
     BrowserModule,
