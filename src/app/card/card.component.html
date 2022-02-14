@@ -1,1 +1,37 @@
-<p>card works!</p>
+<div class="card">
+    <div class="container-fluid">
+        <!-- first row -->
+        <div class="row" id="first-row">
+            <div class="col-md-2">
+                <div class="img-container">
+                    <img src="{{user.avatar_url}}" alt="profile avatar">
+                </div>
+            </div>
+            <div class="col-md-6 name">
+                <p id="name"> {{user.name}} </p>
+                <p id="username">@{{user.login}} </p>
+                <div class="location">
+                    <p id="location"> {{user.location}} </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container-fluid">
+                    <div class="row repos">
+                        <div class="col-md-8">
+                            <p id="repos">Repos</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p id="eighty-nine"> {{user.repo}} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- second row -->
+        <div class="row">
+            <a href="{{user.html_url}}"class='btn btn-primary' target='blank'>Check Github</a>
+
+            <!-- <app-repo-card></app-repo-card> -->
+        </div>
+    </div>
+</div>
