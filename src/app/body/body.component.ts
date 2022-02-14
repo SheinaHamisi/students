@@ -17,6 +17,7 @@ export class BodyComponent implements OnInit {
   submitQuery(userName:string){
     let user = userName;
     this.userService.getUser(user)
+    this.userService.getUserRepos(user)
   }
 
   ngOnInit(): void {

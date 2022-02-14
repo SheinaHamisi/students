@@ -27,8 +27,12 @@ export class GithubService {
   }
 
   getUserRepos(name:string){
+    interface ApiResponse{
+      name:string;
+      full_name:string;
+    }
     let promise = new Promise <void> ((resolve, reject) => {
-      this.http.get<any>(environment.url + "/" + name + "/repos").subscribe(data => {
+      this.http.get<ApiResponse>(environment.url + "/" + name + "/repos").subscribe(data => {
         this.userRepositories = data;
         resolve ();
       }, error => {
@@ -36,6 +40,7 @@ export class GithubService {
         reject(error);
       })
     })
+    return promise;
   }
 
   getUser(name:string){
