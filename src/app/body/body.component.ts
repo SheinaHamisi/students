@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from '../http-client/github.service';
-
+import { User } from '../user';
 
 @Component({
   selector: 'app-body',
@@ -10,13 +10,13 @@ import { GithubService } from '../http-client/github.service';
 })
 export class BodyComponent implements OnInit {
 
-  
+  user: User;
 
   constructor(public userService: GithubService) { }
 
   submitQuery(userName:string){
     let user = userName;
-   
+    this.userService.getUser(user)
   }
 
   ngOnInit(): void {
